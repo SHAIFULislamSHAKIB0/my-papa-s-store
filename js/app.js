@@ -11,19 +11,21 @@ const showProducts = (products) => {
   // console.log(allProducts)
 
   for (const product of allProducts) {
-    console.log(product)
+    // console.log(product.rating)
 
     const productImage = product.image;
     const div = document.createElement("div");
     div.classList.add("product");
     div.innerHTML =
-      `<div class="single-product">
+      `<div class="single-product border border-3 rounded h-100 w-100 mx-auto">
         <div>
            <img class="product-image" src=${productImage}></img>
         </div>
            <h3>${product.title}</h3>
            <p>Category: ${product.category}</p>
            <h2>Price: $ ${product.price}</h2>
+           <p >People's Rating: ${product.rating.rate}</p>
+           <p >Total Ratings: ${product.rating.count}</p>
            <button onclick="addToCart(${product.id},${product.price})" id="addToCart-btn" class="buy-now btn btn-success">add to cart</button>
            <button id="details-btn" class="btn btn-danger">Details</button>
       </div>
@@ -58,7 +60,7 @@ const updatePrice = (id, value) => {
 
 // set innerText function
 const setInnerText = (id, value) => {
-  document.getElementById(id).innerText = value.toFixed(2);
+  document.getElementById(id).innerText = parseFloat(value.toFixed(2));
 };
 
 // update delivery charge and total Tax
