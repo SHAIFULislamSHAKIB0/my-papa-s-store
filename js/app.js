@@ -19,7 +19,7 @@ const showProducts = (products) => {
     div.innerHTML =
       `<div class="single-product border border-2 border-info rounded h-100 w-100 mx-auto">
         <div>
-           <img class="product-image" src=${productImage}></img>
+           <img class="product-image border border-2 rounded" src=${productImage}></img>
         </div>
            <h3>${product.title}</h3>
            <p>Category: ${product.category}</p>
